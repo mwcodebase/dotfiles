@@ -1,3 +1,5 @@
 # Environment setup
-Repo that keeps a standardized version of my unix environment so I can migrate from machine to machine easily.
-Each directory will setup a different aspect of my environment. There are versions for OSX, Ubuntu, and Windows Subsystem for Linux (WSL).
+Here are the standardized versions of my unix environment.
+Each directory holds the environment for it's correcsponding OS type.
+Enter the appropriate directory and run ./initial_{OS}_setup
+The scripts obviously assume I have already installed and setup git.

@@ -1,5 +1,6 @@
 # shortcuts
 alias install='sudo apt-get install'
+alias install_updates='apt-get -qq update && apt-get -qq upgrade'
 alias c='clear'
 alias list='ls -a'
 alias tar='tar -czvf'

@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # try to keep users from running  the wrong script
-env="$(uname)"
-if [ $env != "Linux" ]
+ENV="$(uname)"
+if [ $ENV != "Linux" ]
   then echo "this setup script is meant for WSL only"
   exit
 fi
@@ -13,55 +13,47 @@ if [ "$EUID" -ne 0 ]
   exit
 fi
 
-# ensure the user is in the home dir
-cd
-
-# Get the path to the users Documents folder
-echo "please enter your exact (case sensitive) Windows user name: "
-read user_name
-docs_path="/mnt/c/Users/$user_name/Documents/"
-
-echo "creating Projects folder in Documents..."
-mkdir -p $docs_path/Projects/
-projs_path="$docs_path/Projects/"
-
 # ensure the environment is updated
 echo "running apt-get update..."
-apt-get -qq update -y
+apt-get -qq update
 
 echo "running apt-get upgrade..."
-apt-get -qq upgrade -y
+apt-get -qq upgrade
 
 # install basic packages that are bound to be used
 echo "installing standard packages..."
-apt-get -qq install -y \
+apt-get -qq install \
   python3 \
   python3-pip \
   curl \
   vim \
-  expect \
   ca-certificates \
   zsh \
   sl \
   npm
 
-# install and setup zsh/oh-my-zsh
+# install and setup oh-my-zsh
+cd
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-echo "adding custom fonts to Projects folder"
-git clone https://github.com/powerline/fonts.git $projs_path
-
 echo "installing custom themes"
+mkdir -p ~/zsh_env/
 
 # ls theme
 curl https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.ansi-dark --output ~/zsh_env/.dircolors
 
-# zsh theme
+# zsh theme and fonts
 git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+git clone https://github.com/powerline/fonts.git ~/zsh_env/
 
 # zsh plugin(s)
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
+echo "copying .*rc files"
+cd $OLDPWD
+cp ./setup_files/* ~
+
 echo "this script is complete..."
-echo "please run ./powershell_setup to install the fonts you will need"
+echo "please alter the first line of ~/.zshrc to match your windows username"
+echo "also, please run ./powershell_setup to install the fonts you will need"
