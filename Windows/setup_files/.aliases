@@ -19,13 +19,17 @@ test_app () {
 
 # environment updates
 alias audit_aliases='diff ~/.aliases /mnt/c/Users/$WINDOWS_USER/Documents/Projects/env_setup/Windows/setup_files/.aliases'
-alias copy_aliases='cp ~/.aliases /mnt/c/Users/$WINDOWS_USER/Documents/Projects/env_setup/Windows/setup_files/.aliases'
+alias copy_to_aliases='cp ~/.aliases /mnt/c/Users/$WINDOWS_USER/Documents/Projects/env_setup/Windows/setup_files/.aliases'
+alias copy_from_aliases='cp /mnt/c/Users/$WINDOWS_USER/Documents/Projects/env_setup/Windows/setup_files/.aliases ~/.aliases'
 
 alias audit_bash='diff ~/.bashrc /mnt/c/Users/$WINDOWS_USER/Documents/Projects/env_setup/Windows/setup_files/.bashrc'
-alias copy_bash='cp ~/.bashrc /mnt/c/Users/$WINDOWS_USER/Documents/Projects/env_setup/Windows/setup_files/.bashrc'
+alias copy_to_bash='cp ~/.bashrc /mnt/c/Users/$WINDOWS_USER/Documents/Projects/env_setup/Windows/setup_files/.bashrc'
+alias copy_from_bash='cp /mnt/c/Users/$WINDOWS_USER/Documents/Projects/env_setup/Windows/setup_files/.bashrc ~/.bashrc'
 
 alias audit_vim='diff ~/.vimrc /mnt/c/Users/$WINDOWS_USER/Documents/Projects/env_setup/Windows/setup_files/.vimrc'
-alias copy_vim='cp ~/.vimrc /mnt/c/Users/$WINDOWS_USER/Documents/Projects/env_setup/Windows/setup_files/.vimrc'
+alias copy_to_vim='cp ~/.vimrc /mnt/c/Users/$WINDOWS_USER/Documents/Projects/env_setup/Windows/setup_files/.vimrc'
+alias copy_from_vim='cp /mnt/c/Users/$WINDOWS_USER/Documents/Projects/env_setup/Windows/setup_files/.vimrc ~/.vimrc'
 
 alias audit_zsh='diff ~/.zshrc /mnt/c/Users/$WINDOWS_USER/Documents/Projects/env_setup/Windows/setup_files/.zshrc'
-alias copy_zsh='cp ~/.zshrc /mnt/c/Users/$WINDOWS_USER/Documents/Projects/env_setup/Windows/setup_files/.zshrc'
+alias copy_to_zsh='cp ~/.zshrc /mnt/c/Users/$WINDOWS_USER/Documents/Projects/env_setup/Windows/setup_files/.zshrc'
+alias copy_from_zsh='cp /mnt/c/Users/$WINDOWS_USER/Documents/Projects/env_setup/Windows/setup_files/.zshrc ~/.zshrc'
