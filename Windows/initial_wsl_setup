@@ -39,20 +39,26 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 echo "installing custom themes"
 mkdir -p ~/zsh_env/
 
-# ls theme
+# install ls theme
 curl https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolors.ansi-dark --output ~/zsh_env/.dircolors
 
-# zsh theme and fonts
+# install zsh theme and fonts
 git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 git clone https://github.com/powerline/fonts.git ~/zsh_env/
 
-# zsh plugin(s)
+# install zsh plugin(s)
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
+# copy shell files
 echo "copying .*rc files"
 cd $OLDPWD
-cp ./setup_files/* ~
+cp setup_files/* ~
+
+# install vim plugin(s)
+cd
+mkdir -p .vim/plugin/
+mv auto-pairs.vim .vim/plugin
 
 echo "this script is complete..."
 echo "please alter the first line of ~/.zshrc to match your windows username"
