@@ -44,7 +44,7 @@ curl https://raw.githubusercontent.com/seebi/dircolors-solarized/master/dircolor
 
 # install zsh theme and fonts
 git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
-git clone https://github.com/powerline/fonts.git ~/zsh_env/
+git clone https://github.com/powerline/fonts.git ~/zsh_env/fonts
 
 # install zsh plugin(s)
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
@@ -60,6 +60,6 @@ cd
 mkdir -p .vim/plugin/
 mv auto-pairs.vim .vim/plugin
 
-echo "this script is complete..."
-echo "please alter the first line of ~/.zshrc to match your windows username"
-echo "also, please run ./powershell_setup to install the fonts you will need"
+echo "this script is complete"
+echo "please alter the first line of ~/.zshrc to match your windows username if necessary"
+echo "you will also need to install some custom fonts into windows - read powershell_help.md to learn how"
