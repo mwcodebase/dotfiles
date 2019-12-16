@@ -1,0 +1,30 @@
+# shortcuts
+alias install='sudo apt-get install'
+alias c='clear'
+alias list='ls -a'
+alias tar='tar -czvf'
+alias untar='tar -xvzf'
+alias history='less ~/.zsh_history'
+alias projects='cd /mnt/c/Users/Play/Documents/Projects'
+
+# commands
+alias refresh='source ~/.zshrc'
+alias search='find . -name'
+
+# functions
+test_app () {
+  docker run -d --name=$1 -p=8080:8080 --expose=8080 --rm $1
+}
+
+# environment updates
+alias audit_aliases='diff ~/.aliases /mnt/c/Users/Play/Documents/Projects/env_setup/Windows/setup_files/.aliases'
+alias copy_aliases='cp ~/.aliases /mnt/c/Users/Play/Documents/Projects/env_setup/Windows/setup_files/.aliases'
+
+alias audit_bash='diff ~/.bashrc /mnt/c/Users/Play/Documents/Projects/env_setup/Windows/setup_files/.bashrc'
+alias copy_bash='cp ~/.bashrc /mnt/c/Users/Play/Documents/Projects/env_setup/Windows/setup_files/.bashrc'
+
+alias audit_vim='diff ~/.vimrc /mnt/c/Users/Play/Documents/Projects/env_setup/Windows/setup_files/.vimrc'
+alias copy_vim='cp ~/.vimrc /mnt/c/Users/Play/Documents/Projects/env_setup/Windows/setup_files/.vimrc'
+
+alias audit_zsh='diff ~/.zshrc /mnt/c/Users/Play/Documents/Projects/env_setup/Windows/setup_files/.zshrc'
+alias copy_zsh='cp ~/.zshrc /mnt/c/Users/Play/Documents/Projects/env_setup/Windows/setup_files/.zshrc'
