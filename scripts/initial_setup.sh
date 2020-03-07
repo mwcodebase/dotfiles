@@ -23,15 +23,27 @@ apt -y -q install \
 
 # setup symlinks so dotfiles can be managed by git (if not already set)
 
-if [ ! -L $HOME/.aliases ]; then
+if [ -f $HOME/.aliases ]; then
+  if [ ! -L $HOME/.aliases ]; then
+    printf "Pre-existing .aliases file found. Please backup and remove it so the symlink can be created.\n"
+  fi
+else
   ln -sv $HOME/dotfiles/sink/.aliases $HOME
 fi
 
-if [ ! -L $HOME/.vim ]; then
+if [ -d $HOME/.vim ]; then
+  if [ ! -L $HOME/.vim ]; then
+    printf "Pre-existing .vim directory found. Please backup and remove it so the symlink can be created.\n"
+  fi
+else
   ln -sv $HOME/dotfiles/sink/.vim $HOME
 fi
 
-if [ ! -L $HOME/.vimrc ]; then
+if [ -f $HOME/.vimrc ]; then
+  if [ ! -L $HOME/.vimrc ]; then
+    printf "Pre-existing .vimrc file found. Please backup and remove it so the symlink can be created.\n"
+  fi
+else
   ln -sv $HOME/dotfiles/sink/.vimrc $HOME
 fi
 
