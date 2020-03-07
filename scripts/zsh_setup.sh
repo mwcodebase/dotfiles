@@ -12,7 +12,11 @@ apt -y -q install \
   zsh \
   powerline fonts-powerline
 
-chsh -s /bin/zsh
+CURR_SHELL="$($SHELL --version)"
+
+if [[ ! "$CURR_SHELL" == *"zsh"* ]]; then
+  chsh -s /bin/zsh
+fi
 
 echo "Setup complete. Please close and re-open the terminal."
 
