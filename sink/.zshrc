@@ -18,8 +18,8 @@ plugins=(
 )
 
 # load aliases
-if [ -f ~/.aliases ]; then
-  . ~/.aliases
+if [ -f $HOME/.aliases ]; then
+  . $HOME/.aliases
 fi
 
 # customize prompt

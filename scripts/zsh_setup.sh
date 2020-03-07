@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [[ $EUID -ne 0  ]]; then
-  echo "This script must be run as root" 
+  printf "This script must be run as root" 
   exit 1
 fi
 
@@ -49,5 +49,5 @@ fi
 
 rm -f $HOME/.bash_history $HOME/.bash_logout $HOME/.bashrc $HOME/.profile $HOME/.bash_profile $HOME/.shell.pre-oh-my-zsh
 
-echo "\n\nSetup complete. Please close and re-open the terminal.\n\n"
+printf "\n\nSetup complete. Please close and re-open the terminal.\n\n"
 
