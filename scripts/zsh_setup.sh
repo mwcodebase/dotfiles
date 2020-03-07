@@ -41,10 +41,14 @@ if [ ! -L $HOME/.zshrc  ]; then
   ln -sv $HOME/dotfiles/sink/.zshrc $HOME
 fi
 
-# cleanup .bash files
+# cleanup .bash files (optional)
 
-rm -f $HOME/.bash_history $HOME/.bash_logout $HOME/.bashrc $HOME/.profile $HOME/.bash_profile \
+read -p "Would you like to remove the old .bash files? y/n " PURGE
+
+if [[ "$PURGE" == "y" ]]; then
+  rm -f $HOME/.bash_history $HOME/.bash_logout $HOME/.bashrc $HOME/.profile $HOME/.bash_profile \
   $HOME/.shell.pre-oh-my-zsh $HOME/.zshrc.pre-oh-my-zsh
+fi
 
 printf "\nSetup complete. You may need to close and re-open the terminal.\n\n"
 
