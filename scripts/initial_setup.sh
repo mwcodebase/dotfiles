@@ -8,12 +8,8 @@ apt-get -y -q install \
   python3-pip \
   curl \
   vim \
-  ca-certificates \
-  zsh
+  ca-certificates
 
-mkdir -p ~/.vim
-cp -rT ~/dotfiles/.vim ~/.vim
-
-cp ~/dotfiles/.bashrc ~/.bashrc
+ln -sv ~/dotfiles/sink/* ~
 
 exit
