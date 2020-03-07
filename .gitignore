@@ -1,0 +1,16 @@
+# this .gitignore file is setup as a whitelist
+
+# ignore everything
+*
+
+# except
+!.git/
+!setup_files/
+
+!auto-pairs.vim
+
+!.gitignore
+!.aliases
+!.bashrc
+!.vimrc
+!.zshrc
