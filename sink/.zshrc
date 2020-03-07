@@ -12,6 +12,7 @@ ENABLE_CORRECTION="false"
 ZSH_DISABLE_COMPFIX="true"
 plugins=(
   git
+  docker
   zsh-autosuggestions
   zsh-syntax-highlighting
 )
