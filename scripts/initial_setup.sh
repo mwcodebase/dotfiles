@@ -21,16 +21,16 @@ apt -y -q install \
 
 # setup symlinks so dotfiles can be managed by git (if not already set)
 
-if [ ! -L ~/.aliases ]; then
-  ln -sv ~/dotfiles/sink/.aliases ~
+if [ ! -L $HOME/.aliases ]; then
+  ln -sv $HOME/dotfiles/sink/.aliases $HOME
 fi
 
-if [ ! -L ~/.vim ]; then
-  ln -sv ~/dotfiles/sink/.vim ~
+if [ ! -L $HOME/.vim ]; then
+  ln -sv $HOME/dotfiles/sink/.vim $HOME
 fi
 
-if [ ! -L ~/.vimrc ]; then
-  ln -sv ~/dotfiles/sink/.vimrc ~
+if [ ! -L $HOME/.vimrc ]; then
+  ln -sv $HOME/dotfiles/sink/.vimrc $HOME
 fi
 
 # setup git config (if not already set)

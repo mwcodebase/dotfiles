@@ -7,11 +7,11 @@ alias untar="tar -xvzf"
 alias clipboard="pbcopy"
 
 # commands
-alias refresh="source ~/.zshrc"
+alias refresh="source $HOME/.zshrc"
 alias file_search="find . -name"
 alias word_search="grep -ri * -e"
 alias differences="diff -B -y --suppress-common-lines"
-alias aliases="vim ~/.aliases"
+alias aliases="vim $HOME/.aliases"
 
 # functions
 copy () {
