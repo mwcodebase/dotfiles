@@ -7,17 +7,13 @@ alias untar="tar -xvzf"
 alias clipboard="pbcopy"
 
 # commands
-alias refresh="source ~/.bashrc"
+alias refresh="source ~/.zshrc"
 alias file_search="find . -name"
 alias word_search="grep -ri * -e"
 alias differences="diff -B -y --suppress-common-lines"
 alias aliases="vim ~/.aliases"
 
 # functions
-test_app () {
-  docker run -d --name=$1 -p=8080:8080 --expose=8080 --rm $1
-}
-
 copy () {
   cat $1 | pbcopy
 }
