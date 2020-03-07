@@ -18,8 +18,8 @@ plugins=(
 )
 
 # load aliases
-if [ -f $HOME/.aliases ]; then
-  . $HOME/.aliases
+if [ -f $HOME/dotfiles/sink/.aliases ]; then
+  . $HOME/dotfiles/sink/.aliases
 fi
 
 # customize prompt

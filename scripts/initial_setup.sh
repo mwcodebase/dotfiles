@@ -50,7 +50,7 @@ if [[ ! "$GIT_CONF" == *"user.name"* ]]; then
 fi
 
 if [[ ! "$SHELL" == *"/zsh"*   ]]; then
-  printf "\nSetup complete. If you intend to run zsh_setup.sh, please run `chsh -s $(which zsh)` first.\n\n"
+  printf "\nSetup complete. If you intend to run zsh_setup.sh, please run \"chsh -s $(which zsh)\" first.\n\n"
 else
   printf "\nSetup complete.\n\n"
 fi

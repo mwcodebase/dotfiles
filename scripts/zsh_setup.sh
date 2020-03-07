@@ -6,7 +6,7 @@ if [[ $EUID -ne 0  ]]; then
 fi
 
 if [[ ! "$SHELL" == *"/zsh"*  ]]; then
-  printf "\nPlease run `chsh -s $(which zsh)` first.\n\n"
+  printf "\nPlease run \"chsh -s $(which zsh)\" first.\n\n"
   exit 1
 fi
 
@@ -43,7 +43,8 @@ fi
 
 # cleanup .bash files
 
-rm -f $HOME/.bash_history $HOME/.bash_logout $HOME/.bashrc $HOME/.profile $HOME/.bash_profile $HOME/.shell.pre-oh-my-zsh
+rm -f $HOME/.bash_history $HOME/.bash_logout $HOME/.bashrc $HOME/.profile $HOME/.bash_profile \
+  $HOME/.shell.pre-oh-my-zsh $HOME/.zshrc.pre-oh-my-zsh
 
 printf "\nSetup complete. You may need to close and re-open the terminal.\n\n"
 
