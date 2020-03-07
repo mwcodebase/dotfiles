@@ -7,6 +7,8 @@ fi
 
 cd
 
+# install packages
+
 apt -y -q update
 apt -y -q upgrade
 
@@ -16,6 +18,8 @@ apt -y -q install \
   curl \
   vim \
   ca-certificates
+
+# setup symlinks so dotfiles can be managed by git (if not already set)
 
 if [ ! -L ~/.aliases ]; then
   ln -sv ~/dotfiles/sink/.aliases ~
@@ -28,6 +32,8 @@ fi
 if [ ! -L ~/.vimrc ]; then
   ln -sv ~/dotfiles/sink/.vimrc ~
 fi
+
+# setup git config (if not already set)
 
 GIT_CONF="$(git config --list)"
 

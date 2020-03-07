@@ -3,9 +3,6 @@ export ZSH="~/.oh-my-zsh"
 ZSH_THEME="powerlevel9k/powerlevel9k"
 COMPLETION_WAITING_DOTS="true"
 
-# set colors for ls
-eval `dircolors ~/zsh_env/.dircolors`
-
 # tab completion settings
 HYPHEN_INSENSITIVE="true"
 CASE_SENSITIVE="true"
@@ -20,8 +17,8 @@ plugins=(
 )
 
 # load aliases
-if [ -f ~.aliases ]; then
-  . ~.aliases
+if [ -f ~/.aliases ]; then
+  . ~/.aliases
 fi
 
 # customize prompt
