@@ -16,6 +16,11 @@ apt -y -q install \
   zsh \
   powerline fonts-powerline
 
+# set the shell to zsh (if not already done)
+if [[ ! "$SHELL" == *"/bin/zsh"* ]]; then
+  chsh -s /bin/zsh
+fi
+
 # install oh-my-zsh, fonts, and plugins (if not already done)
 
 if [ ! -d $HOME/.oh-my-zsh ]; then
