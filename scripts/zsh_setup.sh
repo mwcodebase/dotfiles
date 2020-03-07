@@ -49,5 +49,5 @@ fi
 
 rm -f $HOME/.bash_history $HOME/.bash_logout $HOME/.bashrc $HOME/.profile $HOME/.bash_profile $HOME/.shell.pre-oh-my-zsh
 
-printf "\n\nSetup complete. Please close and re-open the terminal.\n\n"
+printf "\nSetup complete. Please close and re-open the terminal.\n\n"
 
