@@ -6,23 +6,14 @@ if [[ $EUID -ne 0  ]]; then
 fi
 
 if [[ ! "$SHELL" == *"/zsh"*  ]]; then
-  printf "\nBecause you do not have oh-my-zsh installed, this script will exit halfway through. Simply re-run the script when that happens.\n"
+  printf "\nPlease run `chsh -s $(which zsh)` first.\n\n"
+  exit 1
 fi
 
-cd
-
-# install packages
-
-apt -y -q update
-apt -y -q upgrade
-
-apt -y -q install \
-  zsh \
-  powerline fonts-powerline
+cd $HOME
 
 # install oh-my-zsh, fonts, and plugins (if not already done)
 
-# this command will cause the script to exit, hence the message at the top
 if [ ! -d $HOME/.oh-my-zsh ]; then
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
@@ -54,5 +45,5 @@ fi
 
 rm -f $HOME/.bash_history $HOME/.bash_logout $HOME/.bashrc $HOME/.profile $HOME/.bash_profile $HOME/.shell.pre-oh-my-zsh
 
-printf "\nSetup complete. Please close and re-open the terminal.\n\n"
+printf "\nSetup complete. You may need to close and re-open the terminal.\n\n"
 

@@ -5,7 +5,7 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 
-cd
+cd $HOME
 
 # install packages
 
@@ -17,7 +17,9 @@ apt -y -q install \
   python3-pip \
   curl \
   vim \
-  ca-certificates
+  ca-certificates \
+  zsh \
+  powerline fonts-powerline
 
 # setup symlinks so dotfiles can be managed by git (if not already set)
 
@@ -45,5 +47,11 @@ fi
 if [[ ! "$GIT_CONF" == *"user.name"* ]]; then
   read -p "Enter git user name: " NAME
   git config --global user.name $NAME
+fi
+
+if [[ ! "$SHELL" == *"/zsh"*   ]]; then
+  printf "\nSetup complete. If you intend to run zsh_setup.sh, please run `chsh -s $(which zsh)` first.\n\n"
+else
+  printf "\nSetup complete.\n\n"
 fi
 
