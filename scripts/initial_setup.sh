@@ -5,6 +5,8 @@ if [[ $EUID -ne 0 ]]; then
    exit 1
 fi
 
+cd
+
 apt -y -q update
 apt -y -q upgrade
 
@@ -38,6 +40,4 @@ if [[ ! "$GIT_CONF" == *"user.name"* ]]; then
   read -p "Enter git user name: " NAME
   git config --global user.name $NAME
 fi
-
-echo "Setup complete. Please close and re-open the terminal."
 
