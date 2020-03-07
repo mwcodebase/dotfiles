@@ -15,8 +15,29 @@ apt -y -q install \
   vim \
   ca-certificates
 
-ln -sv ~/dotfiles/sink/.aliases ~
-ln -sv ~/dotfiles/sink/.vim ~
-ln -sv ~/dotfiles/sink/.vimrc ~
+if [ ! -L ~/.aliases ]; then
+  ln -sv ~/dotfiles/sink/.aliases ~
+fi
 
-exit
+if [ ! -L ~/.vim ]; then
+  ln -sv ~/dotfiles/sink/.vim ~
+fi
+
+if [ ! -L ~/.vimrc ]; then
+  ln -sv ~/dotfiles/sink/.vimrc ~
+fi
+
+GIT_CONF="$(git config --list)"
+
+if [[ ! "$GIT_CONF" == *"user.email"* ]]; then
+  read -p "Enter git email: " EMAIL
+  git config --global user.email $EMAIL
+fi
+
+if [[ ! "$GIT_CONF" == *"user.name"* ]]; then
+  read -p "Enter git user name: " NAME
+  git config --global user.name $NAME
+fi
+
+echo "Setup complete. Please close and re-open the terminal."
+
