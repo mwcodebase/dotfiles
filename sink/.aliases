@@ -1,6 +1,6 @@
 # shortcuts
-alias install="sudo apt-get install"
-alias update="apt-get -qq update && apt-get -qq upgrade"
+alias install="sudo apt install -y -q"
+alias update="apt update -y -q && apt upgrade -y -q"
 alias c="clear"
 alias tar="tar -czvf"
 alias untar="tar -xvzf"
@@ -11,9 +11,7 @@ alias refresh="source ~/.bashrc"
 alias file_search="find . -name"
 alias word_search="grep -ri * -e"
 alias differences="diff -B -y --suppress-common-lines"
-alias aliases="vim ~/dotfiles/.aliases"
-alias vim="vim -u ~/.vim/.vimrc"
-alias vi="vim -u ~/.vim/.vimrc"
+alias aliases="vim ~/.aliases"
 
 # functions
 test_app () {

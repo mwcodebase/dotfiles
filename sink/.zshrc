@@ -1,4 +1,4 @@
-export ZSH="~/dotfiles/.oh-my-zsh"
+export ZSH="~/.oh-my-zsh"
 
 ZSH_THEME="powerlevel9k/powerlevel9k"
 COMPLETION_WAITING_DOTS="true"
@@ -20,8 +20,8 @@ plugins=(
 )
 
 # load aliases
-if [ -f ~/dotfiles/.aliases ]; then
-  . ~/dotfiles/.aliases
+if [ -f ~.aliases ]; then
+  . ~.aliases
 fi
 
 # customize prompt
