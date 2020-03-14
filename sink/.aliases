@@ -4,6 +4,7 @@ alias c="clear"
 alias tar="tar -czvf"
 alias untar="tar -xvzf"
 alias clipboard="pdcopy"
+alias back="cd $OLDPWD"
 
 # commands
 alias refresh="source $HOME/dotfiles/sink/.zshrc"
@@ -11,6 +12,7 @@ alias file_search="find . -name"
 alias word_search="grep -ri * -e"
 alias differences="diff -B -y --suppress-common-lines"
 alias aliases="vim $HOME/dotfiles/sink/.aliases"
+alias vscode="vim $HOME/.config/Code/User/settings.json"
 
 # functions
 copy () {
