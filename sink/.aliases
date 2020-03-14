@@ -1,17 +1,16 @@
 # shortcuts
 alias install="sudo apt install -y -q"
-alias update="apt update -y -q && apt upgrade -y -q"
 alias c="clear"
 alias tar="tar -czvf"
 alias untar="tar -xvzf"
-alias clipboard="pbcopy"
+alias clipboard="pdcopy"
 
 # commands
-alias refresh="source $HOME/.zshrc"
+alias refresh="source $HOME/dotfiles/sink/.zshrc"
 alias file_search="find . -name"
 alias word_search="grep -ri * -e"
 alias differences="diff -B -y --suppress-common-lines"
-alias aliases="vim $HOME/.aliases"
+alias aliases="vim $HOME/dotfiles/sink/.aliases"
 
 # functions
 copy () {

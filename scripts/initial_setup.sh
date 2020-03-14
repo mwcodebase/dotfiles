@@ -9,17 +9,20 @@ cd $HOME
 
 # install packages
 
-apt -y -q update
-apt -y -q upgrade
+apt update -y -q
+apt upgrade -y -q
 
-apt -y -q install \
-  python3 \
-  python3-pip \
-  curl \
-  vim \
-  ca-certificates \
-  zsh \
-  powerline fonts-powerline
+PACKAGES="python3 python3-pip python3-tk curl default-jdk vim ca-certificates zsh dos2unix"
+
+for i in $PACKAGES; do
+  apt install -y -q $i
+done
+
+apt install -y -q powerline fonts-powerline
+
+# setup local time so that dual boot clocks aren't wonky
+
+timedatectl set-local-rtc 1 --adjust-system-clock
 
 # setup symlinks so dotfiles can be managed by git (if not already set)
 

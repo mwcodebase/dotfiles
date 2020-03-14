@@ -5,7 +5,7 @@ set softtabstop=2
 set expandtab
 set number
 set showcmd
-filetype indent on
+filetype indent off
 set wildmenu
 set lazyredraw
 set showmatch
