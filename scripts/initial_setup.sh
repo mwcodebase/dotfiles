@@ -65,7 +65,12 @@ if [[ ! "$GIT_CONF" == *"user.name"* ]]; then
 fi
 
 if [[ ! "$SHELL" == *"/zsh"*   ]]; then
-  printf "\nSetup complete. If you intend to run zsh_setup.sh, please run \"chsh -s $(which zsh)\" first.\n\n"
+  read -p "Would you like to set zsh as the default shell?" SWITCH
+
+  if [[ $SWITCH == "y" ]]; then
+    chsh -s $(which zsh)
+    echo "For the shell change to take effect, you will need to reboot the machine. I know, it's weird."
+  fi
 else
   printf "\nSetup complete.\n\n"
 fi
