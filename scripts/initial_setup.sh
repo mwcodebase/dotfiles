@@ -67,7 +67,7 @@ fi
 if [[ ! "$SHELL" == *"/zsh"*   ]]; then
   read -p "Would you like to set zsh as the default shell?" SWITCH
 
-  if [[ $SWITCH == "y" ]]; then
+  if [[ "$SWITCH" == "y" ]]; then
     chsh -s $(which zsh)
     echo "For the shell change to take effect, you will need to reboot the machine. I know, it's weird."
   fi
