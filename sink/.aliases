@@ -19,3 +19,7 @@ copy () {
   cat $1 | pbcopy
 }
 
+make_zip () {
+  zip -r $1.zip $1
+}
+
