@@ -10,6 +10,8 @@ if [[ ! "$SHELL" == *"/zsh"*  ]]; then
   exit 1
 fi
 
+echo "Sometimes installing oh-my-zsh causes the script to exit. If that is the case, simply re-run the script."
+
 cd $HOME
 
 # install oh-my-zsh, fonts, and plugins (if not already done)
