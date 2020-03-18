@@ -13,7 +13,7 @@ alias file_search="find . -name"
 alias word_search="grep -ri * -e"
 alias differences="diff -B -y --suppress-common-lines"
 alias aliases="vim $HOME/dotfiles/sink/.aliases"
-alias vscode_settings="vim $HOME/.config/Code/User/settings.json"
+alias vscode_settings="vim $HOME/dotfiles/sink/vscode/settings.json"
 
 # functions
 copy () {
