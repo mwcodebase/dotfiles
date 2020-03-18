@@ -9,16 +9,16 @@ cd $HOME
 
 # install packages
 
-apt update -y -q
-apt upgrade -y -q
+apt update -yq
+apt upgrade -yq
 
 PACKAGES="python3 python3-pip python3-tk curl default-jdk vim ca-certificates zsh dos2unix"
 
 for i in $PACKAGES; do
-  apt install -y -q $i
+  apt install -yq $i
 done
 
-apt install -y -q powerline fonts-powerline
+apt install -yq powerline fonts-powerline
 
 # setup local time so that dual boot clocks aren't wonky
 
@@ -48,6 +48,15 @@ if [ -f $HOME/.vimrc ]; then
   fi
 else
   ln -sv $HOME/dotfiles/sink/.vimrc $HOME
+fi
+
+if [ -f $HOME/.config/user-dirs.dirs ]; then
+  if [ ! -L $HOME/.config/user-dirs.dirs ]; then
+    rm $HOME/.config/user-dirs.dirs
+    ln -sv $HOME/dotfiles/sink/.config/user-dirs.dirs $HOME/.config/user-dirs.dirs
+  fi
+else
+  ln -sv $HOME/dotfiles/sink/.config/user-dirs.dirs $HOME/.config/user-dirs.dirs
 fi
 
 # setup git config (if not already set)
