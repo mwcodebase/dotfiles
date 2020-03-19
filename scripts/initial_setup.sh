@@ -7,22 +7,23 @@ fi
 
 cd $HOME
 
-# install packages
+# install any packages that have yet to be installed
 
-apt update -yq
-apt upgrade -yq
+apt-get update -yq
+apt-get upgrade -yq
 
-PACKAGES="python3 python3-pip python3-tk curl default-jdk vim ca-certificates zsh dos2unix"
+INSTALLED_PACKAGES="$(dpkg --get-selections | grep -v deinstall)"
+NEW_PACKAGES="gnome-tweaks python3 python3-pip python3-tk curl default-jdk vim ca-certificates zsh dos2unix"
 
-for i in $PACKAGES; do
-  apt install -yq $i
+for i in $NEW_PACKAGES; do
+  if [[ ! "$INSTALLED_PACKAGES" == *"$i"* ]]; then
+    apt-get install -yq $i
+  fi
 done
 
-apt install -yq powerline fonts-powerline
-
-# setup local time so that dual boot clocks aren't wonky
-
-timedatectl set-local-rtc 1 --adjust-system-clock
+if [[ ! "$INSTALLED_PACKAGES" == *"fonts-powerline"* ]]; then 
+  apt-get install -yq powerline fonts-powerline
+fi
 
 # setup symlinks so dotfiles can be managed by git (if not already set)
 
@@ -50,14 +51,25 @@ else
   ln -sv $HOME/dotfiles/sink/.vimrc $HOME
 fi
 
-if [ -f $HOME/.config/user-dirs.dirs ]; then
-  if [ ! -L $HOME/.config/user-dirs.dirs ]; then
-    rm $HOME/.config/user-dirs.dirs
-    ln -sv $HOME/dotfiles/sink/.config/user-dirs.dirs $HOME/.config/user-dirs.dirs
+# replace user dir setup (symlink sadly does not work in this case)
+
+HOME_DIRS="Downloads Desktop Templates Public Documents Music Pictures Video"
+REPLACEMENT_DIRS="downloads dump/desktop dump/templates dump/public docs dump/music dump/pictures dump/video"
+
+for i in $HOME_DIRS; do
+  if [ -d $HOME/$i ]; then
+    rmdir $HOME/$i
   fi
-else
-  ln -sv $HOME/dotfiles/sink/.config/user-dirs.dirs $HOME/.config/user-dirs.dirs
-fi
+done
+
+for i in $REPLACEMENT_DIRS; do
+  if [ ! -d $HOME/$i ]; then
+    mkdir -p $HOME/$i
+  fi
+done
+
+rm -f $HOME/.config/user-dirs.dirs
+cp $HOME/dotfiles/sink/.config/user-dirs.dirs $HOME/.config/user-dirs.dirs
 
 # setup git config (if not already set)
 
@@ -73,14 +85,16 @@ if [[ ! "$GIT_CONF" == *"user.name"* ]]; then
   git config --global user.name $NAME
 fi
 
+# ask to setup zsh shell
+
 if [[ ! "$SHELL" == *"/zsh"*   ]]; then
   read -p "Would you like to set zsh as the default shell?" SWITCH
 
   if [[ "$SWITCH" == "y" ]]; then
     chsh -s $(which zsh)
-    echo "For the shell change to take effect, you will need to reboot the machine. I know, it's weird."
+    printf "For the shell change to take effect, you will need to reboot the machine. I know, it's weird."
   fi
 else
-  printf "\nSetup complete.\n\n"
+  printf "\nSetup complete.\n"
 fi
 
