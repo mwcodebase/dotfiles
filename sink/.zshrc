@@ -29,4 +29,18 @@ POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%f"
 POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 
+# check if dotfiles needs to be updated
+
+cd $HOME/dotfiles
+
+GIT_CHECK="$(git status)"
+
+if [[ ! "$GIT_CHECK" == *"nothing to commit, working tree clean"* ]]; then
+  printf "\nYou have uncommited changes in your dotfiles repo. Please back them up.\n\n"
+elif [[ "$GIT_CHECK" == *"Your branch is ahead"* ]]; then
+  printf "\nYou have un-pushed changes in your dotfiles repo. Please back them up.\n\n"
+fi
+
+cd $HOME
+
 source $ZSH/oh-my-zsh.sh
