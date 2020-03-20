@@ -4,5 +4,8 @@
   "workbench.startEditor": "newUntitledFile",
   "terminal.integrated.fontSize": 14,
   "edit.fontSize": 14,
-  "explorer.confirmDelete": false
+  "explorer.confirmDelete": false,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": true
 }
