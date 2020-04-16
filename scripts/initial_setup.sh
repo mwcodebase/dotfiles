@@ -54,7 +54,7 @@ fi
 # replace user dir setup (symlink sadly does not work in this case)
 
 HOME_DIRS="Downloads Desktop Templates Public Documents Music Pictures Video"
-REPLACEMENT_DIRS="downloads dump/desktop dump/templates dump/public docs dump/music dump/pictures dump/video"
+REPLACEMENT_DIRS="downloads dump/desktop dump/templates dump/public docs dump/music dump/pictures dump/videos"
 
 for i in $HOME_DIRS; do
   if [ -d $HOME/$i ]; then
