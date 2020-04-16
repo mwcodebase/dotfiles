@@ -13,7 +13,7 @@ apt-get update -yq
 apt-get upgrade -yq
 
 INSTALLED_PACKAGES="$(dpkg --get-selections | grep -v deinstall)"
-NEW_PACKAGES="gnome-tweaks python3 python3-pip python3-tk curl default-jdk vim ca-certificates zsh dos2unix"
+NEW_PACKAGES="vim gnome-tweaks python3 python3-pip python3-tk curl default-jdk vim ca-certificates zsh dos2unix"
 
 for i in $NEW_PACKAGES; do
   if [[ ! "$INSTALLED_PACKAGES" == *"$i"* ]]; then
@@ -88,11 +88,11 @@ fi
 # ask to setup zsh shell
 
 if [[ ! "$SHELL" == *"/zsh"*   ]]; then
-  read -p "Would you like to set zsh as the default shell?" SWITCH
+  read -p "Would you like to set zsh as the default shell? (y/n): " SWITCH
 
   if [[ "$SWITCH" == "y" ]]; then
     chsh -s $(which zsh)
-    printf "For the shell change to take effect, you will need to reboot the machine. I know, it's weird."
+    printf "For the shell change to take effect, you will need to reboot the machine. I know, it's weird.\n"
   fi
 else
   printf "\nSetup complete.\n"
