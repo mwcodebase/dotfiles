@@ -73,6 +73,10 @@ cp $HOME/dotfiles/sink/.config/user-dirs.dirs $HOME/.config/user-dirs.dirs
 
 # setup git config (if not already set)
 
+if [ ! -f $HOME/.git-credentials ]; then
+  git config --global credential.helper store
+fi
+
 GIT_CONF="$(git config --list)"
 
 if [[ ! "$GIT_CONF" == *"user.email"* ]]; then
