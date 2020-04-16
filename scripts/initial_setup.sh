@@ -95,7 +95,8 @@ if [[ ! "$SHELL" == *"/zsh"*   ]]; then
   read -p "Would you like to set zsh as the default shell? (y/n): " SWITCH
 
   if [[ "$SWITCH" == "y" ]]; then
-    chsh -s $(which zsh)
+    printf "Please run:"
+    printf "sudo chsh -s \$(which zsh)"
     printf "For the shell change to take effect, you will need to reboot the machine. I know, it's weird.\n"
   fi
 else
