@@ -1,16 +1,6 @@
 #!/bin/bash
 
-if [[ $EUID -ne 0  ]]; then
-  printf "This script must be run as root" 
-  exit 1
-fi
-
-if [[ ! "$SHELL" == *"/zsh"*  ]]; then
-  printf "\nPlease run \"chsh -s $(which zsh)\" first.\n\n"
-  exit 1
-fi
-
-echo "Sometimes installing oh-my-zsh causes the script to exit. If that is the case, simply re-run the script."
+printf "Sometimes installing oh-my-zsh causes the script to exit. If that is the case, simply re-run the script."
 
 cd $HOME
 
