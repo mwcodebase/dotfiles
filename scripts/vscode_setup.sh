@@ -1,6 +1,14 @@
 #!/bin/bash
-# sets up symlink for vscode settings.json file (if installed and not already set)
 
+if [[ ! $EUID -ne 0 ]]; then
+   printf "Do not run this script as root" 
+   exit 1
+fi
+
+set -e
+cd $HOME
+
+# setup symlink for vscode settings.json file (if vscode is installed and the link is not already set)
 CHECK="$(code --version)"
 
 if [[ "$CHECK" == *"command not found"*  ]]; then
