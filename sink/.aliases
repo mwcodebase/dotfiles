@@ -6,6 +6,7 @@ alias untar="tar -xvzf"
 alias clipboard="pdcopy"
 alias back="cd $OLDPWD"
 alias vscode="code"
+alias cron_logs="grep CRON /var/log/syslog"
 
 # commands
 alias refresh="source $HOME/dotfiles/sink/.zshrc"
