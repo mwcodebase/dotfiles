@@ -44,3 +44,4 @@ fi
 cd $HOME
 
 source $ZSH/oh-my-zsh.sh
+export PATH=$PATH:/usr/local/bin/go/bin
