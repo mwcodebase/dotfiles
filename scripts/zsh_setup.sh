@@ -44,4 +44,4 @@ if [[ "$PURGE" == "y" ]]; then
   $HOME/.shell.pre-oh-my-zsh $HOME/.zshrc.pre-oh-my-zsh
 fi
 
-printf "\nSetup complete. You may need to close and re-open the terminal.\n"
+printf "\nzsh setup complete. You may need to close and re-open the terminal.\n"

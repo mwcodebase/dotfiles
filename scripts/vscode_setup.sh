@@ -25,3 +25,5 @@ if [ -f $HOME/.config/Code/User/settings.json ]; then
 else
   ln -sv $HOME/dotfiles/sink/vscode/settings.json $HOME/.config/Code/User/settings.json
 fi
+
+printf "vscode setup complete"

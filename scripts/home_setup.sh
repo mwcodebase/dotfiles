@@ -61,5 +61,5 @@ if [[ ! "$SHELL" == *"/zsh"*   ]]; then
     printf "If the shell change does not take effect on reboot, edit /etc/passwd\n"
   fi
 else
-  printf "\nSetup complete.\n"
+  printf "\nHome setup complete.\n"
 fi
