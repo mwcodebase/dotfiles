@@ -7,5 +7,6 @@
   "explorer.confirmDelete": false,
   "editor.tabSize": 2,
   "editor.insertSpaces": true,
-  "editor.detectIndentation": true
+  "editor.detectIndentation": true,
+  "editor.fontSize": 14
 }

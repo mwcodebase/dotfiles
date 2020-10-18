@@ -25,4 +25,11 @@ for i in $PACKAGES; do
     brew install $i
 done
 
+# install powerline fonts
+git clone https://github.com/powerline/fonts.git --depth=1
+cd fonts
+./install.sh
+cd $HOME
+rm -rf fonts
+
 printf "\nPackage setup complete\n"
