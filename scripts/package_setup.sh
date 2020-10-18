@@ -19,10 +19,10 @@ cd $HOME
 brew update
 brew upgrade
 
-PACKAGES="vim python3 python3-pip python3-tk curl vim ca-certificates zsh"
+PACKAGES="vim python3 curl vim zsh powerline-go"
 
 for i in $PACKAGES; do
     brew install $i
 done
 
-brew install powerline fonts-powerline
+printf "Package setup complete"
