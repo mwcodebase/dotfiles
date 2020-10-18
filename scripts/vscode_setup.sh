@@ -12,7 +12,8 @@ cd $HOME
 CHECK="$(code --version)"
 
 if [[ "$CHECK" == *"command not found"*  ]]; then
-  echo "vscode has not been installed. Please install vscode before running this script."
+  printf "Either vscode has not been installed or the code command is not in your PATH.
+  Please install vscode and add it to your PATH before running this script."
   exit -1
 fi
 
