@@ -17,13 +17,13 @@ if [[ "$CHECK" == *"command not found"*  ]]; then
   exit -1
 fi
 
-if [ -f $HOME/.config/Code/User/settings.json ]; then
-  if [ ! -L $HOME/.config/Code/User/settings.json ]; then
-    rm -f $HOME/.config/Code/User/settings.json
-    ln -sv $HOME/dotfiles/sink/vscode/settings.json $HOME/.config/Code/User/settings.json
+if [ -f $HOME/Library/Application\ Support/Code/User/settings.json ]; then
+  if [ ! -L $HOME/Library/Application\ Support/Code/User/settings.json ]; then
+    rm -f $HOME/Library/Application\ Support/Code/User/settings.json
+    ln -sv $HOME/dotfiles/sink/vscode/settings.json $HOME/Library/Application\ Support/Code/User/settings.json
   fi
 else
-  ln -sv $HOME/dotfiles/sink/vscode/settings.json $HOME/.config/Code/User/settings.json
+  ln -sv $HOME/dotfiles/sink/vscode/settings.json $HOME/Library/Application\ Support/Code/User/settings.json
 fi
 
 printf "vscode setup complete"
