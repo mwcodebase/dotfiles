@@ -25,4 +25,4 @@ for i in $PACKAGES; do
     brew install $i
 done
 
-printf "Package setup complete"
+printf "\nPackage setup complete\n"

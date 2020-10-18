@@ -26,4 +26,4 @@ else
   ln -sv $HOME/dotfiles/sink/vscode/settings.json $HOME/Library/Application\ Support/Code/User/settings.json
 fi
 
-printf "vscode setup complete"
+printf "\nvscode setup complete\n"
