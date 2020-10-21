@@ -10,4 +10,5 @@
   "editor.detectIndentation": true,
   "editor.fontSize": 14,
   "window.zoomLevel": 0,
+  "terminal.integrated.fontFamily": "'Source Code Pro for Powerline'"
 }
