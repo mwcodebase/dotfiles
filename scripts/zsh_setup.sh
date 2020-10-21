@@ -45,3 +45,4 @@ if [[ "$PURGE" == "y" ]]; then
 fi
 
 printf "\nzsh setup complete, you may need to close and re-open the terminal\n"
+printf "Also, you will need to set the terminal font to 'Source Code Pro for Powerline' (or whatever else you want to use) manually\n"
