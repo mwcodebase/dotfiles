@@ -1,3 +1,4 @@
+set backspace=indent,eol,start
 set visualbell
 syntax enable
 set tabstop=2
