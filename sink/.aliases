@@ -15,6 +15,7 @@ alias word_search="grep -ri * -e"
 alias differences="diff -B -y --suppress-common-lines"
 alias aliases="vim $HOME/dotfiles/sink/.aliases"
 alias vscode_settings="vim $HOME/dotfiles/sink/vscode/settings.json"
+alias wake_fawkes="wakeonlan 20:1a:06:d8:eb:1c"
 
 # functions
 copy () {
