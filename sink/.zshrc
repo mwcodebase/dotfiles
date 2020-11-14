@@ -22,6 +22,10 @@ if [ -f $HOME/dotfiles/sink/.aliases ]; then
   . $HOME/dotfiles/sink/.aliases
 fi
 
+if [ -f $HOME/dotfiles/sink/.private_aliases ]; then
+  . $HOME/dotfiles/sink/.private_aliases
+fi
+
 # customize prompt
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir rbenv vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(time)
