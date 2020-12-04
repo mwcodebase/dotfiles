@@ -22,8 +22,8 @@ if [ -f $HOME/dotfiles/sink/.aliases ]; then
   . $HOME/dotfiles/sink/.aliases
 fi
 
-if [ -f $HOME/dotfiles/sink/.private_aliases ]; then
-  . $HOME/dotfiles/sink/.private_aliases
+if [ -f $HOME/.private_aliases ]; then
+  . $HOME/.private_aliases
 fi
 
 # customize prompt
