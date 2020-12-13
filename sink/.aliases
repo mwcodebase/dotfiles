@@ -9,6 +9,7 @@ alias vscode="code"
 alias cron_logs="grep CRON /var/log/syslog"
 
 # commands
+alias r="source $HOME/dotfiles/sink/.zshrc"
 alias refresh="source $HOME/dotfiles/sink/.zshrc"
 alias file_search="find . -name"
 alias word_search="grep -ri * -e"
