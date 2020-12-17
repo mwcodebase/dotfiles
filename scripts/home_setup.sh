@@ -36,6 +36,7 @@ fi
 # setup git config (if not already set)
 if [ ! -f $HOME/.git-credentials ]; then
   git config --global credential.helper store
+  git config --global pager.branch false
 fi
 
 GIT_CONF="$(git config --list)"
