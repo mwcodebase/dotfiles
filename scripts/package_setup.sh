@@ -12,7 +12,7 @@ cd $HOME
 apt-get update -yq
 apt-get upgrade -yq
 
-PACKAGES="vim gnome-tweaks python3 python3-pip python3-tk curl vim ca-certificates zsh dos2unix wakeonlan"
+PACKAGES="net-tools vim gnome-tweaks python3 python3-pip python3-tk curl vim ca-certificates zsh dos2unix wakeonlan"
 
 for i in $PACKAGES; do
     apt-get install -yq $i
