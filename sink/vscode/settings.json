@@ -6,6 +6,7 @@
   "terminal.integrated.shell.osx": "/bin/zsh",
   "explorer.confirmDelete": false,
   "editor.tabSize": 2,
+  "editor.codeLens": false,
   "editor.insertSpaces": true,
   "editor.detectIndentation": true,
   "editor.fontSize": 14,
