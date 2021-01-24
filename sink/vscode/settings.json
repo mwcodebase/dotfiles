@@ -10,5 +10,11 @@
   "editor.detectIndentation": true,
   "editor.fontSize": 14,
   "window.zoomLevel": 0,
-  "terminal.integrated.fontFamily": "'Source Code Pro for Powerline'"
+  "terminal.integrated.fontFamily": "'Source Code Pro for Powerline'",
+  "workbench.editorAssociations": [
+    {
+      "viewType": "jupyter.notebook.ipynb",
+      "filenamePattern": "*.ipynb"
+    }
+  ]
 }
