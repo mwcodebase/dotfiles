@@ -13,7 +13,6 @@ ENABLE_CORRECTION="false"
 ZSH_DISABLE_COMPFIX="true"
 plugins=(
   git
-  docker
   zsh-autosuggestions
   zsh-syntax-highlighting
 )
@@ -45,4 +44,3 @@ fi
 cd $HOME
 
 source $ZSH/oh-my-zsh.sh
-export PATH=$PATH:/usr/local/bin/go/bin
