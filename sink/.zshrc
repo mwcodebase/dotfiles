@@ -1,4 +1,5 @@
 export ZSH="$HOME/.oh-my-zsh"
+export TERM="xterm-256color"
 
 ZSH_THEME="powerlevel9k/powerlevel9k"
 COMPLETION_WAITING_DOTS="true"
