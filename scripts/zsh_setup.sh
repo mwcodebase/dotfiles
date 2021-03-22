@@ -18,10 +18,6 @@ if [ ! -d $HOME/.oh-my-zsh/custom/themes/powerlevel9k ]; then
   git clone https://github.com/bhilburn/powerlevel9k.git $HOME/.oh-my-zsh/custom/themes/powerlevel9k
 fi
 
-if [ ! -d $HOME/.oh-my-zsh/custom/plugins/zsh-docker ]; then
-  git clone https://github.com/zsh-users/zsh-docker.git $HOME/.oh-my-zsh/custom/plugins/zsh-docker
-fi
-
 if [ ! -d $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions ]; then
   git clone https://github.com/zsh-users/zsh-autosuggestions.git $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 fi
