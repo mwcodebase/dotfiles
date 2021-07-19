@@ -1,7 +1,7 @@
 {
   "telemetry.enableTelemetry": false,
   "editor.minimap.enabled": false,
-  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.fontSize": 16,
   "terminal.external.osxExec": "iTerm.app",
   "terminal.integrated.shell.osx": "/bin/zsh",
   "explorer.confirmDelete": false,
